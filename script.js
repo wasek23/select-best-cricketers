@@ -14,6 +14,8 @@ const selectedPlayers = [4];
 // Select DOM
 const playersEl = document.getElementById('players');
 const selectedPlayersEl = document.getElementById('selectedPlayers');
+const calculatePlayerExpensesBtn = document.getElementById('calculatePlayerExpenses');
+const playerExpensesEl = document.getElementById('playerExpenses');
 
 // Display Players
 playersEl.innerHTML = playersList.map(player => `<div id='player-${player.id}' class='flex flex-col items-center bg-black-0d'>
@@ -78,4 +80,11 @@ playersEl.addEventListener('click', function (e) {
 		displaySelectedPlayers();
 		updateDisabledState();
 	}
+});
+
+// Calculate player expenses
+calculatePlayerExpensesBtn.addEventListener('click', function () {
+	const perPlayerPrice = Number(document.getElementById('perPlayerPrice').value);
+
+	playerExpensesEl.innerText = perPlayerPrice * selectedPlayers.length;
 });

@@ -57,6 +57,7 @@
 		<div class='container mx-auto flex gap-6 flex-col sm:flex-row'>
 			<div id='players' class='flex-1 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'></div> <!-- Players Card -->
 
+
 			<div class='flex gap-6 flex-col'>
 				<div class='w-72 bg-black-0d p-6'>
 					<h2 class='text-2xl font-semibold text-center mb-9'>Selected - V</h2>
@@ -64,34 +65,35 @@
 					<ol id='selectedPlayers'></ol>
 				</div> <!-- Selected Players -->
 
+
 				<div class='w-72 bg-black-0d p-6'>
 					<h2 class='text-2xl font-semibold text-center mb-9'>Budget</h2>
 
 					<div class='flex items-center justify-between mb-5'>
 						<h4 class='text-light-af'>Per Player</h4>
 
-						<input type='number' value='1000' class='w-32 px-2 py-3 border border-white bg-transparent' placeholder='Player expense' />
-					</div>
+						<input id='perPlayerPrice' type='number' value='1000' class='w-32 px-2 py-3 border border-white bg-transparent' placeholder='Player expense' />
+					</div> <!-- Per Player -->
 
-					<button class='w-full font-semibold text-white bg-indigo-800 p-3 mb-10'>Calculate</button>
+					<button id='calculatePlayerExpenses' class='w-full font-semibold text-white bg-indigo-800 p-3 mb-10'>Calculate</button>
 
 					<div class='flex items-center justify-between mb-3'>
 						<h4 class='text-light-af'>Player Expenses</h4>
 
-						<span>$<span id='playerExpenses'>1000</span></span>
-					</div>
+						<span class='text-orange-400'>$<span id='playerExpenses'>1000</span></span>
+					</div> <!-- Player Expenses -->
 
 					<div class='flex items-center justify-between mb-3'>
 						<h4 class='text-light-af'>Manager</h4>
 
 						<input type='number' value='2000' class='w-32 px-2 py-3 border border-white bg-transparent' placeholder='Manager expense' />
-					</div>
+					</div> <!-- Manager -->
 
 					<div class='flex items-center justify-between mb-5'>
 						<h4 class='text-light-af'>Coach</h4>
 
 						<input type='number' value='4000' class='w-32 px-2 py-3 border border-white bg-transparent' placeholder='Coach expense' />
-					</div>
+					</div> <!-- Coach -->
 
 					<button class='w-full font-semibold text-white bg-indigo-800 p-3 mb-5'>Calculate Total</button>
 
@@ -99,7 +101,7 @@
 						<h4 class='text-light-af'>Total</h4>
 
 						<span class='text-orange-600'>$<span id='totalExpenses'>7000</span></span>
-					</div>
+					</div> <!-- Total -->
 				</div> <!-- Budget -->
 			</div> <!-- Sidebar -->
 		</div> <!-- Container -->
