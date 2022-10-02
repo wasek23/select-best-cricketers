@@ -20,6 +20,7 @@
 					// },
 					colors: {
 						'black-15': '#151515',
+						'light-b3': '#b3b3b3',
 					}
 				}
 			}
@@ -34,13 +35,13 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 
-<body class='bg-black-15'>
+<body class='bg-black-15 font-primary'>
 	<!-- Header Start -->
 	<header class='bg-black h-96 flex items-center justify-center overflow-hidden relative'>
 		<div class='content text-center z-10'>
-			<h1 class='font-secondary text-7xl text-orange-600 mb-7'>Select Your Best Five</h1>
+			<h1 class='font-secondary text-5xl sm:text-6xl lg:text-7xl text-orange-600 mb-7'>Select Your Best Five</h1>
 
-			<p class='text-xl text-white'>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+			<p class='text-lg md:text-xl text-white'>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
 		</div>
 
 		<img class='absolute bottom-0 right-0 -rotate-45 w-80 z-0 opacity-50' src='img/logo.png' alt='Logo' />
@@ -49,8 +50,19 @@
 
 
 	<!-- Main Start -->
-	<main>
+	<main class='py-20 text-white'>
+		<div class="container mx-auto flex gap-6 flex-col sm:flex-row">
+			<div id='players' class='flex-1 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'></div>
 
+			<div class='flex gap-6 flex-col'>
+				<div id="selectedPlayers" class='w-72'>
+					<h2>Selected - V</h2>
+				</div>
+				<div id="budget" class='w-72'>
+					<h2>Budget</h2>
+				</div>
+			</div>
+		</div>
 	</main>
 	<!-- Main End -->
 
@@ -61,6 +73,8 @@
 		<script>document.write(new Date().getFullYear());</script> All Rights Reserved.
 	</footer>
 	<!--Start End-->
+
+	<script src='script.js'></script>
 </body>
 
 </html>

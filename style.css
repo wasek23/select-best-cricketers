@@ -15,3 +15,8 @@ header .content {
 	width: 735px;
 	max-width: 100%;
 }
+
+/* Players */
+#players button:disabled {
+	background-color: #a2a9af;
+}
