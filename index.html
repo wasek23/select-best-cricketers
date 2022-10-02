@@ -9,7 +9,7 @@
 	<title>Select Best Five</title>
 
 	<!-- Tailwind -->
-	<script src="https://cdn.tailwindcss.com"></script>
+	<script src='https://cdn.tailwindcss.com'></script>
 	<script>
 		tailwind.config = {
 			theme: {
@@ -19,7 +19,9 @@
 					// 	'secondary': ['Manrope', 'sans-serif']
 					// },
 					colors: {
+						'black-0d': '#0d0d0d',
 						'black-15': '#151515',
+						'black-8': '#888',
 						'light-b3': '#b3b3b3',
 					}
 				}
@@ -32,7 +34,7 @@
 	<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
 	<link href='https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Manrope:wght@400;500;600;700;800&display=swap' rel='stylesheet' />
 
-	<link rel="stylesheet" href="style.css">
+	<link rel='stylesheet' href='style.css'>
 </head>
 
 <body class='bg-black-15 font-primary'>
@@ -51,15 +53,19 @@
 
 	<!-- Main Start -->
 	<main class='py-20 text-white'>
-		<div class="container mx-auto flex gap-6 flex-col sm:flex-row">
+		<div class='container mx-auto flex gap-6 flex-col sm:flex-row'>
 			<div id='players' class='flex-1 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'></div>
 
 			<div class='flex gap-6 flex-col'>
-				<div id="selectedPlayers" class='w-72'>
-					<h2>Selected - V</h2>
+				<div class='w-72 bg-black-0d p-6'>
+					<h2 class='text-2xl font-semibold text-center mb-9'>Selected - V</h2>
+
+					<ol id='selectedPlayers' class=''>
+						</ul>
 				</div>
-				<div id="budget" class='w-72'>
-					<h2>Budget</h2>
+
+				<div id='budget' class='w-72 bg-black-0d'>
+					<h2 class='text-2xl font-semibold text-center mb-9'>Budget</h2>
 				</div>
 			</div>
 		</div>

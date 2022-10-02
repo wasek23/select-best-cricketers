@@ -13,26 +13,38 @@ const selectedPlayers = [4];
 
 // Select DOM
 const playersEl = document.getElementById('players');
+const selectedPlayersEl = document.getElementById('selectedPlayers');
 
 // Display Players
-playersEl.innerHTML = playersList.map(player => {
-	return `<div id='player-${player.id}' class='flex flex-col items-center'>
-		<img src='${player.photo}' alt='${player.name}' class='h-52' />
+playersEl.innerHTML = playersList.map(player => `<div id='player-${player.id}' class='flex flex-col items-center bg-black-0d'>
+	<img src='${player.photo}' alt='${player.name}' class='h-52' />
 
-		<div class='w-full flex flex-col items-center p-4'>
-			<h3 class='text-xl font-extrabold mb-2'>${player.name}</h3>
+	<div class='w-full flex flex-col items-center p-4'>
+		<h3 class='text-xl font-extrabold mb-2'>${player.name}</h3>
 
-			<div class='w-full max-w-[200px] text-light-b3 flex items-center justify-between mb-6'>
-				<span>${player.runs} runs</span>
-				-
-				<span>${player.wickets} wkts</span>
-			</div>
-
-			<button player='${player.id}' class='w-full text-white bg-indigo-800 p-2'>Select</button>
+		<div class='w-full max-w-[200px] text-light-b3 flex items-center justify-between mb-6'>
+			<span>${player.runs} runs</span>
+			-
+			<span>${player.wickets} wkts</span>
 		</div>
-	</div>`
-}).join('');
 
+		<button player='${player.id}' class='w-full text-white bg-indigo-800 p-2'>Select</button>
+	</div>
+</div>`).join('');
+
+// Display Selected Players
+function displaySelectedPlayers() {
+	selectedPlayersEl.innerHTML = selectedPlayers.map((pId, index) => {
+		const player = playersList.find(p => p.id === pId);
+
+		return `<li class='flex items-center font-base gap-5 mb-5'>
+			<span class='text-xl font-bold text-black-8'>${index + 1}. </span> ${player.name}
+		</li>`
+	}).join('');
+}
+displaySelectedPlayers();
+
+// Update player button according event
 function updateDisabledState() {
 	for (const player of playersList) {
 		const button = document.querySelector(`#player-${player.id} button`);
@@ -48,18 +60,22 @@ function updateDisabledState() {
 }
 updateDisabledState();
 
+// On select player
 playersEl.addEventListener('click', function (e) {
 	const playerId = Number(e.target.getAttribute('player'));
 
 	if (playerId > 0) {
 		const isSelected = selectedPlayers.includes(playerId);
 
-		if (!isSelected) {
-			selectedPlayers.push(playerId);
-		} else {
+		if (isSelected) {
 			alert('You have selected the player!');
+		} else if (!isSelected && selectedPlayers.length < 5) {
+			selectedPlayers.push(playerId);
+		} else if (!isSelected && selectedPlayers.length >= 5) {
+			alert('You cannot select more then 5 players!');
 		}
 
+		displaySelectedPlayers();
 		updateDisabledState();
 	}
 });
