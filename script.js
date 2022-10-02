@@ -88,6 +88,11 @@ playersEl.addEventListener('click', function (e) {
 calculatePlayerExpensesBtn.addEventListener('click', function () {
 	const perPlayerAmount = Number(document.getElementById('perPlayerPrice').value);
 
+	if (0 >= perPlayerAmount) {
+		alert('Per player amount should be grater then 0');
+		return;
+	}
+
 	playerExpensesEl.innerText = perPlayerAmount * selectedPlayers.length;
 });
 
@@ -96,6 +101,11 @@ calculateTotalExpensesBtn.addEventListener('click', function () {
 	const playerExpensesAmount = Number(playerExpensesEl.innerText);
 	const managerAmount = Number(document.getElementById('managerPrice').value);
 	const coachAmount = Number(document.getElementById('coachPrice').value);
+
+	if (0 >= managerAmount || 0 >= coachAmount) {
+		alert('Amount should be grater then 0');
+		return;
+	}
 
 	totalExpensesEl.innerText = playerExpensesAmount + managerAmount + coachAmount;
 });

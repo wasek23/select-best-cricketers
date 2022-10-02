@@ -10,6 +10,7 @@
 * Dynamic selected players.
 * Calculate player expenses.
 * Calculate total expenses.
+* Validate input value.
 * Header hero and footer copyright section.
 
 ### Technology Used:
@@ -17,4 +18,4 @@
 
 <br />
 
-### [Preview Project](https://select-best-five-js-dom.netlify.app/)
+### [Preview Project](https://select-best-cricketers.netlify.app)
