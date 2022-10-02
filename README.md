@@ -7,6 +7,7 @@
 * Fully responsive design.
 * Google fonts included.
 * Design dynamic players.
+* Dynamic selected players.
 * Header hero and footer copyright section.
 
 ### Technology Used:

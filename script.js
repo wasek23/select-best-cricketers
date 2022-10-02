@@ -28,7 +28,7 @@ playersEl.innerHTML = playersList.map(player => `<div id='player-${player.id}' c
 			<span>${player.wickets} wkts</span>
 		</div>
 
-		<button player='${player.id}' class='w-full text-white bg-indigo-800 p-2'>Select</button>
+		<button player='${player.id}' class='w-full font-semibold text-white uppercase bg-indigo-800 p-2'>Select</button>
 	</div>
 </div>`).join('');
 

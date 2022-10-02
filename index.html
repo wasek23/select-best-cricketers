@@ -22,6 +22,7 @@
 						'black-0d': '#0d0d0d',
 						'black-15': '#151515',
 						'black-8': '#888',
+						'light-af': '#afafaf',
 						'light-b3': '#b3b3b3',
 					}
 				}
@@ -54,21 +55,54 @@
 	<!-- Main Start -->
 	<main class='py-20 text-white'>
 		<div class='container mx-auto flex gap-6 flex-col sm:flex-row'>
-			<div id='players' class='flex-1 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'></div>
+			<div id='players' class='flex-1 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'></div> <!-- Players Card -->
 
 			<div class='flex gap-6 flex-col'>
 				<div class='w-72 bg-black-0d p-6'>
 					<h2 class='text-2xl font-semibold text-center mb-9'>Selected - V</h2>
 
-					<ol id='selectedPlayers' class=''>
-						</ul>
-				</div>
+					<ol id='selectedPlayers'></ol>
+				</div> <!-- Selected Players -->
 
-				<div id='budget' class='w-72 bg-black-0d'>
+				<div class='w-72 bg-black-0d p-6'>
 					<h2 class='text-2xl font-semibold text-center mb-9'>Budget</h2>
-				</div>
-			</div>
-		</div>
+
+					<div class='flex items-center justify-between mb-5'>
+						<h4 class='text-light-af'>Per Player</h4>
+
+						<input type='number' value='1000' class='w-32 px-2 py-3 border border-white bg-transparent' placeholder='Player expense' />
+					</div>
+
+					<button class='w-full font-semibold text-white bg-indigo-800 p-3 mb-10'>Calculate</button>
+
+					<div class='flex items-center justify-between mb-3'>
+						<h4 class='text-light-af'>Player Expenses</h4>
+
+						<span>$<span id='playerExpenses'>1000</span></span>
+					</div>
+
+					<div class='flex items-center justify-between mb-3'>
+						<h4 class='text-light-af'>Manager</h4>
+
+						<input type='number' value='2000' class='w-32 px-2 py-3 border border-white bg-transparent' placeholder='Manager expense' />
+					</div>
+
+					<div class='flex items-center justify-between mb-5'>
+						<h4 class='text-light-af'>Coach</h4>
+
+						<input type='number' value='4000' class='w-32 px-2 py-3 border border-white bg-transparent' placeholder='Coach expense' />
+					</div>
+
+					<button class='w-full font-semibold text-white bg-indigo-800 p-3 mb-5'>Calculate Total</button>
+
+					<div class='flex items-center justify-between mb-3 font-bold'>
+						<h4 class='text-light-af'>Total</h4>
+
+						<span class='text-orange-600'>$<span id='totalExpenses'>7000</span></span>
+					</div>
+				</div> <!-- Budget -->
+			</div> <!-- Sidebar -->
+		</div> <!-- Container -->
 	</main>
 	<!-- Main End -->
 
