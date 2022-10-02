@@ -1,5 +1,5 @@
-# SELECT BEST FIVE
-#### Select Best Five is a JS DOM Project.
+# SELECT BEST CRICKETERS
+#### Select Best Cricketers is a JS DOM Project.
 
 <br />
 
@@ -8,6 +8,8 @@
 * Google fonts included.
 * Design dynamic players.
 * Dynamic selected players.
+* Calculate player expenses.
+* Calculate total expenses.
 * Header hero and footer copyright section.
 
 ### Technology Used:

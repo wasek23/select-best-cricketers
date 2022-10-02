@@ -16,6 +16,8 @@ const playersEl = document.getElementById('players');
 const selectedPlayersEl = document.getElementById('selectedPlayers');
 const calculatePlayerExpensesBtn = document.getElementById('calculatePlayerExpenses');
 const playerExpensesEl = document.getElementById('playerExpenses');
+const calculateTotalExpensesBtn = document.getElementById('calculateTotalExpenses');
+const totalExpensesEl = document.getElementById('totalExpenses');
 
 // Display Players
 playersEl.innerHTML = playersList.map(player => `<div id='player-${player.id}' class='flex flex-col items-center bg-black-0d'>
@@ -84,7 +86,16 @@ playersEl.addEventListener('click', function (e) {
 
 // Calculate player expenses
 calculatePlayerExpensesBtn.addEventListener('click', function () {
-	const perPlayerPrice = Number(document.getElementById('perPlayerPrice').value);
+	const perPlayerAmount = Number(document.getElementById('perPlayerPrice').value);
 
-	playerExpensesEl.innerText = perPlayerPrice * selectedPlayers.length;
+	playerExpensesEl.innerText = perPlayerAmount * selectedPlayers.length;
+});
+
+// Calculate total expenses
+calculateTotalExpensesBtn.addEventListener('click', function () {
+	const playerExpensesAmount = Number(playerExpensesEl.innerText);
+	const managerAmount = Number(document.getElementById('managerPrice').value);
+	const coachAmount = Number(document.getElementById('coachPrice').value);
+
+	totalExpensesEl.innerText = playerExpensesAmount + managerAmount + coachAmount;
 });
