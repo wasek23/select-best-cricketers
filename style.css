@@ -1,0 +1,17 @@
+.font-primary {
+	font-family: 'Manrope', sans-serif;
+}
+
+.font-secondary {
+	font-family: 'Berkshire Swash', cursive;
+}
+
+/* Header */
+header {
+	height: 480px;
+}
+
+header .content {
+	width: 735px;
+	max-width: 100%;
+}
